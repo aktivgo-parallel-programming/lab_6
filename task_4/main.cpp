@@ -1,9 +1,7 @@
 #include <iostream>
 #include <mpich/mpi.h>
-#include <random>
 
 constexpr auto MSGLEN = 1;
-using namespace std;
 
 int main(int argc, char * argv[]) {
 
@@ -34,9 +32,9 @@ int main(int argc, char * argv[]) {
         printf("%d received number %d\n", proc_rank, number);
 
         if (number - numberCopy == proc_num - 1) {
-            cout << "Correct\n" << endl;
+            std::cout << "Correct\n" << std::endl;
         } else {
-            cout << "Error\n" << endl;
+            std::cout << "Error\n" << std::endl;
         }
     } else {
         if (proc_rank > 0 && proc_rank < proc_num - 1) {
