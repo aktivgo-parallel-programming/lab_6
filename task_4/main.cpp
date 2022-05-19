@@ -1,9 +1,12 @@
 #include <iostream>
 #include <mpich/mpi.h>
+#include <ctime>
+#include <random>
 
 constexpr auto MSGLEN = 1;
 
 int main(int argc, char * argv[]) {
+    srand(time(nullptr));
 
     int dest, source;
 
